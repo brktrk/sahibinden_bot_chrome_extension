@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "Sahibinden Numara Al & Yazdır",
+    "description": "Sahibinden.com ilan detaylarında numara alma ve CSV indir",
+    "version": "1.0",
+    "permissions": [
+      "activeTab",
+      "storage",
+      "tabs",
+      "scripting"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.sahibinden.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "host_permissions": [
+      "https://www.sahibinden.com/*"
+    ]
+  }
+  
